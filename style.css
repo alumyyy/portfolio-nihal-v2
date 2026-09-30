@@ -1,25 +1,6 @@
-/* =====================================================================
-   Nihal Murarka — Portfolio stylesheet
-   Plain CSS only. Organised section by section:
-   1. Color system (CSS variables) + theme switch
-   2. Base / reset / layout helpers
-   3. Keyframes + scroll reveal
-   4. Navbar + mobile menu
-   5. Hero (+ arrow, photo, side rail)
-   6. Cards, pills, buttons, icons
-   7. About bento grid
-   8. Skills
-   9. Projects
-   10. Education timeline
-   11. Contact + form
-   12. Footer
-   13. Responsive breakpoints (768px, 1024px, 1100px)
-   14. Reduced motion
-   ===================================================================== */
 
-/* ---------------- 1. COLOR SYSTEM ---------------- */
 :root {
-  /* Dark theme = default */
+ 
   --bg: #0a1224;
   --surface: #101a30;
   --surface-2: #15213b;
@@ -28,7 +9,7 @@
   --muted: #95a3bd;
   --accent: #7cc4f5;
 
-  /* Spacing scale */
+  
   --s1: 8px;
   --s2: 16px;
   --s3: 24px;
@@ -40,7 +21,7 @@
   --max: 1100px;
 }
 
-/* Light theme: applied when the hidden #theme-switch checkbox is checked */
+
 :root:has(#theme-switch:checked) {
   --bg: #f5f7fc;
   --surface: #ffffff;
@@ -51,7 +32,7 @@
   --accent: #1d6fa5;
 }
 
-/* ---------------- 2. BASE ---------------- */
+
 * {
   box-sizing: border-box;
 }
@@ -106,7 +87,7 @@ label:focus-visible {
   border-radius: 6px;
 }
 
-/* The two state checkboxes are hidden but still focusable targets via labels */
+
 .state-input {
   position: absolute;
   opacity: 0;
@@ -159,7 +140,7 @@ label:focus-visible {
   word-break: break-word;
 }
 
-/* ---------------- 3. ANIMATIONS ---------------- */
+
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -224,7 +205,7 @@ label:focus-visible {
   }
 }
 
-/* Hero staggered entrance */
+
 .reveal-1,
 .reveal-2,
 .reveal-3,
@@ -256,8 +237,7 @@ label:focus-visible {
   animation: fade-scale 0.6s var(--ease) 0.3s both;
 }
 
-/* Scroll-driven reveal. Wrapped in @supports so unsupported browsers
-   simply show the content normally. */
+
 @supports (animation-timeline: view()) {
   .section,
   .card,
@@ -267,7 +247,7 @@ label:focus-visible {
     animation-range: entry 0% cover 30%;
   }
 
-  /* Slight stagger inside grids */
+  
   .card:nth-child(2) {
     animation-delay: 0.05s;
   }
@@ -285,7 +265,7 @@ label:focus-visible {
   }
 }
 
-/* ---------------- 4. NAVBAR ---------------- */
+
 .nav-wrap {
   position: sticky;
   top: 0;
@@ -323,7 +303,7 @@ label:focus-visible {
 }
 
 .nav-links {
-  display: none; /* mobile: hidden until the menu opens */
+  display: none; 
   list-style: none;
   margin: 0;
   padding: 0;
@@ -341,7 +321,7 @@ label:focus-visible {
   transition: color 0.25s ease;
 }
 
-/* Animated underline that grows left to right */
+
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -355,13 +335,13 @@ label:focus-visible {
   transition: transform 0.3s var(--ease);
 }
 
-/* Highlight the section currently targeted by the URL hash */
+
 .nav-links a:target,
 .nav-links a:active {
   color: var(--accent);
 }
 
-/* Mobile menu open state (checkbox hack) */
+
 body:has(#nav-switch:checked) .nav-links {
   display: flex;
   animation: fade-up 0.3s var(--ease) both;
@@ -389,7 +369,7 @@ body:has(#nav-switch:checked) .nav-links {
     opacity 0.2s ease;
 }
 
-/* Hamburger animates into an X */
+
 body:has(#nav-switch:checked) .burger-bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -406,7 +386,7 @@ body:has(#nav-switch:checked) .burger-bar:nth-child(3) {
   gap: var(--s1);
 }
 
-/* Theme toggle */
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -435,7 +415,7 @@ body:has(#nav-switch:checked) .burger-bar:nth-child(3) {
   display: none;
 }
 
-/* When light theme is on, show the sun and rotate the icon */
+
 body:has(#theme-switch:checked) .icon-moon {
   display: none;
 }
@@ -446,7 +426,7 @@ body:has(#theme-switch:checked) .theme-icon {
   transform: rotate(180deg);
 }
 
-/* ---------------- 5. HERO ---------------- */
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -490,7 +470,7 @@ body:has(#theme-switch:checked) .theme-icon {
   gap: var(--s2);
 }
 
-/* Arrow between text and photo — points down on mobile */
+
 .hero-arrow {
   display: flex;
   flex-direction: column;
@@ -525,7 +505,7 @@ body:has(#theme-switch:checked) .theme-icon {
   transition: box-shadow 0.3s ease;
 }
 
-/* Desktop fixed social rail */
+
 .rail {
   display: none;
   position: fixed;
@@ -566,7 +546,7 @@ body:has(#theme-switch:checked) .theme-icon {
   background-color: var(--border);
 }
 
-/* ---------------- 6. CARDS, PILLS, BUTTONS, ICONS ---------------- */
+
 .card {
   background-color: var(--surface);
   border: 1px solid var(--border);
@@ -616,7 +596,7 @@ body:has(#theme-switch:checked) .theme-icon {
     color 0.25s ease;
 }
 
-/* Buttons */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -657,7 +637,7 @@ body:has(#theme-switch:checked) .theme-icon {
   transition: transform 0.25s var(--ease);
 }
 
-/* Icon links with CSS-only tooltips */
+
 .icon-link {
   position: relative;
   display: inline-flex;
@@ -700,7 +680,7 @@ body:has(#theme-switch:checked) .theme-icon {
   transition: opacity 0.25s ease;
 }
 
-/* Row links inside cards */
+
 .row-link {
   display: flex;
   align-items: center;
@@ -726,7 +706,7 @@ body:has(#theme-switch:checked) .theme-icon {
   margin-left: auto;
 }
 
-/* Hover effects only on devices that truly hover */
+
 @media (hover: hover) {
   .card:hover {
     transform: translateY(-4px);
@@ -813,14 +793,14 @@ body:has(#theme-switch:checked) .theme-icon {
   }
 }
 
-/* ---------------- 7. ABOUT BENTO GRID ---------------- */
+
 .bento {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--s2);
 }
 
-/* ---------------- 8. SKILLS ---------------- */
+
 .grid-3 {
   display: grid;
   grid-template-columns: 1fr;
@@ -834,7 +814,7 @@ body:has(#theme-switch:checked) .theme-icon {
   margin-bottom: var(--s1);
 }
 
-/* ---------------- 9. PROJECTS ---------------- */
+
 .grid-projects {
   display: grid;
   grid-template-columns: 1fr;
@@ -846,7 +826,7 @@ body:has(#theme-switch:checked) .theme-icon {
   overflow: hidden;
   border-radius: 12px;
   border: 1px solid var(--border);
-  background-color: var(--surface-2); /* plain fallback if the image is missing */
+  background-color: var(--surface-2);
   margin-bottom: var(--s2);
 }
 
@@ -877,8 +857,7 @@ body:has(#theme-switch:checked) .theme-icon {
   margin-top: var(--s3);
 }
 
-/* ---------------- 10. EDUCATION TIMELINE ---------------- */
-.timeline {
+
   list-style: none;
   margin: 0;
   padding: 0 0 0 var(--s3);
@@ -905,7 +884,7 @@ body:has(#theme-switch:checked) .theme-icon {
   margin-top: var(--s2);
 }
 
-/* ---------------- 11. CONTACT ---------------- */
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -982,7 +961,7 @@ textarea:focus {
   border-color: var(--accent);
 }
 
-/* Label turns accent while its field is focused */
+
 .field:has(input:focus) label,
 .field:has(textarea:focus) label {
   color: var(--accent);
@@ -992,7 +971,7 @@ textarea:focus {
   justify-self: start;
 }
 
-/* ---------------- 12. FOOTER ---------------- */
+
 .footer {
   border-top: 1px solid var(--border);
   background-color: var(--surface);
@@ -1032,7 +1011,7 @@ textarea:focus {
   }
 }
 
-/* ---------------- 13. RESPONSIVE ---------------- */
+
 @media (min-width: 768px) {
   .burger {
     display: none;
@@ -1098,7 +1077,7 @@ textarea:focus {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  /* Different card sizes make the bento rhythm */
+  
   .bento-large {
     grid-column: span 2;
   }
@@ -1127,7 +1106,7 @@ textarea:focus {
   }
 }
 
-/* ---------------- 14. REDUCED MOTION ---------------- */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
