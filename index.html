@@ -14,22 +14,14 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- All styling lives here -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!--
-      THEME + MENU STATE (CSS-only)
-      These two hidden checkboxes hold the state of the page.
-      #theme-switch  -> checked means LIGHT theme (CSS uses :root:has(...))
-      #nav-switch    -> checked means the mobile menu is open
-    -->
     <input type="checkbox" id="theme-switch" class="state-input" />
     <input type="checkbox" id="nav-switch" class="state-input" />
 
-    <!-- ============ DESKTOP SIDE RAIL (fixed, shown only >= 1100px) ============ -->
+  
     <aside class="rail" aria-label="Social links">
       <a
         class="rail-link"
@@ -74,10 +66,10 @@
       <span class="rail-line" aria-hidden="true"></span>
     </aside>
 
-    <!-- ============ NAVBAR (sticky) ============ -->
+    
     <header class="nav-wrap">
       <nav class="nav container" aria-label="Main navigation">
-        <!-- Logo + name -->
+     
         <a class="brand" href="#hero">
           <img
             src="images/logo.png"
@@ -87,14 +79,14 @@
           <span class="brand-name">Nihal</span>
         </a>
 
-        <!-- Hamburger button: a label linked to the hidden #nav-switch checkbox -->
+       
         <label class="burger" for="nav-switch" aria-label="Toggle menu">
           <span class="burger-bar"></span>
           <span class="burger-bar"></span>
           <span class="burger-bar"></span>
         </label>
 
-        <!-- Section links -->
+       
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -103,7 +95,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <!-- Right side: social icons + theme toggle -->
+       
         <div class="nav-right">
           <a
             class="icon-link"
@@ -134,15 +126,15 @@
             </svg>
           </a>
 
-          <!-- CSS-only theme toggle: label for the hidden #theme-switch checkbox -->
+         
           <label class="theme-toggle" for="theme-switch" aria-label="Toggle dark and light theme">
             <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <!-- moon (dark theme) -->
+            
               <path
                 class="icon-moon"
                 d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"
               />
-              <!-- sun (light theme) -->
+            
               <g class="icon-sun">
                 <circle cx="12" cy="12" r="4.2" />
                 <path
@@ -156,7 +148,7 @@
     </header>
 
     <main>
-      <!-- ============ HERO ============ -->
+    
       <section id="hero" class="hero container">
         <div class="hero-text">
           <p class="label reveal-1">Hello, I'm</p>
@@ -180,7 +172,7 @@
             >
           </div>
 
-          <!-- Round personal link icons -->
+        
           <div class="hero-socials reveal-6">
             <a
               class="icon-link round"
@@ -225,7 +217,7 @@
           </div>
         </div>
 
-        <!-- Arrow pointing at the photo (rotates down on mobile) -->
+    
         <div class="hero-arrow" aria-hidden="true">
           <svg class="hero-arrow-svg" viewBox="0 0 80 24" focusable="false">
             <path d="M2 12h68" />
@@ -245,12 +237,12 @@
         </div>
       </section>
 
-      <!-- ============ ABOUT (bento grid) ============ -->
+      
       <section id="about" class="section container">
         <h2 class="section-title">A little about me.</h2>
 
         <div class="bento">
-          <!-- Large intro card -->
+      
           <article class="card bento-large">
             <h3 class="card-title">Learning by building</h3>
             <p>
@@ -260,7 +252,7 @@
             </p>
           </article>
 
-          <!-- Interests -->
+   
           <article class="card bento-interests">
             <h3 class="card-title">Interests</h3>
             <ul class="pills">
@@ -271,14 +263,14 @@
             </ul>
           </article>
 
-          <!-- Chess goal -->
+        
           <article class="card bento-chess">
             <span class="chess-glyph" aria-hidden="true">♟</span>
             <h3 class="card-title">Current goal</h3>
             <p class="muted">Working toward 500 Elo on chess.com</p>
           </article>
 
-          <!-- Currently learning -->
+         
           <article class="card bento-learning">
             <h3 class="card-title">Currently learning</h3>
             <ul class="pills">
@@ -288,7 +280,7 @@
             </ul>
           </article>
 
-          <!-- Find me online -->
+     
           <article class="card bento-online">
             <h3 class="card-title">Find me online</h3>
             <a
@@ -332,7 +324,7 @@
         </div>
       </section>
 
-      <!-- ============ SKILLS ============ -->
+      
       <section id="skills" class="section container">
         <h2 class="section-title">Skills.</h2>
         <div class="grid-3">
@@ -362,11 +354,11 @@
         </div>
       </section>
 
-      <!-- ============ PROJECTS ============ -->
+     
       <section id="projects" class="section container">
         <h2 class="section-title">Things I've built.</h2>
         <div class="grid-projects">
-          <!-- Featured project -->
+       
           <article class="card project-card">
             <div class="project-media">
               <img
@@ -379,7 +371,7 @@
               <span class="project-overlay" aria-hidden="true">View project</span>
             </div>
             <h3 class="card-title">Amazon</h3>
-            <!-- EDIT THIS LINE: project description -->
+         
             <p class="muted">An Amazon-inspired web page built with HTML and CSS.</p>
             <ul class="pills">
               <li class="pill">HTML</li>
@@ -393,19 +385,18 @@
                 rel="noopener noreferrer"
                 >GitHub <span class="arrow">→</span></a
               >
-              <!-- PLACEHOLDER: replace href="#" with the GitHub Pages link -->
+             
               <a class="btn btn-ghost" href="#">Live Demo <span class="arrow">→</span></a>
             </div>
           </article>
 
-          <!-- Placeholder card: no fake projects -->
+         
           <article class="card card-dashed">
             <p class="muted">More projects coming soon</p>
           </article>
         </div>
       </section>
 
-      <!-- ============ EDUCATION (CSS-only timeline) ============ -->
       <section id="education" class="section container">
         <h2 class="section-title">Education.</h2>
         <ol class="timeline">
@@ -423,11 +414,11 @@
         </p>
       </section>
 
-      <!-- ============ CONTACT ============ -->
+    
       <section id="contact" class="section container">
         <h2 class="section-title">Let's build something together.</h2>
         <div class="contact-grid">
-          <!-- Left: big link cards -->
+         
           <div class="contact-links">
             <a class="card contact-card" href="mailto:nihal.26bcs10399@sst.scaler.com">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -477,7 +468,7 @@
             </a>
           </div>
 
-          <!-- Right: frontend-only form (mailto, no backend) -->
+         
           <form
             class="card contact-form"
             action="mailto:nihal.26bcs10399@sst.scaler.com"
@@ -504,7 +495,7 @@
       </section>
     </main>
 
-    <!-- ============ FOOTER ============ -->
+   
     <footer class="footer">
       <div class="container footer-inner">
         <p class="muted">© 2026 Nihal Murarka · Built with HTML &amp; CSS</p>
